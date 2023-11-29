@@ -21,19 +21,9 @@ services:
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
       - db-volume:/var/lib/mysql
-    environment:
-      MYSQL_DATABASE: laravel_db
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
   db-test:
     build: ./docker/mysql
     ports:
       - 3307:3306
-    environment:
-      MYSQL_DATABASE: laravel_db
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
 volumes:
   db-volume:
